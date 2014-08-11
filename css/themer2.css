@@ -1,0 +1,162 @@
+body{
+      font: 13px Arial,Helvetica,sans-serif;
+      color: #333;
+      background: #fff;
+      margin: 0;
+      padding: 0;
+      visibility: hidden;
+  }
+  header{
+      width: 100%;
+      height: 65px;
+  }
+  .full-page-content{
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+  }
+  .blog-title{
+      font: 16px "Montserrat",sans-serif;
+      text-transform: uppercase;
+      margin: 0;
+      padding: 20px 0 0 20px;
+      width: 103px;
+      float: left;
+  }
+  .blog-title img{
+      width: 45%;
+      height: auto;
+  }
+  nav{
+      margin: 30px 0 0 30px;
+      float: left;
+  }
+  nav ul{
+      margin: 0;
+      padding: 0;
+  }
+  nav ul li{
+      display: inline-block;
+      margin-right: 10px;
+  }
+  nav ul li a{
+      font: bold 16px "Montserrat",sans-serif;
+      text-transform: uppercase;
+      color: #333;
+      text-decoration: none;
+      -webkit-transition: color 0.2s ease-in;
+      -moz-transition: color 0.2s ease-in;
+      -o-transition: color 0.2s ease-in;
+      -ms-transition: color 0.2s ease-in;
+      transition: color 0.2s ease-in;
+      
+  }
+  nav ul li a:hover{
+      color: #757575;
+      text-decoration: none;
+  }
+  #main{
+      width: 100%;
+      margin: 0 auto;
+      background: #eee;
+  }
+  .clearfix{
+      clear:;
+  }
+  .isotope{
+      width: auto;
+  }
+  .post{
+      float: left;
+      width: 30%;
+      max-width: 250px;
+      height: auto;
+      margin: 0;
+      position: relative;
+  }
+  .post img{
+      width: 100%;
+      height: auto;
+  }
+  .post.quote{
+      display: block;
+      width:25%;
+      min-height:100px;
+  }
+  .tumblr-controls{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #fff;
+  }
+  .like-and-reblog-buttons{
+      margin: 0;
+      padding: 0;
+  }
+  .like-and-reblog-buttons li{
+      display: inline-block;
+  }
+  /* Overrides */
+  .bx-wrapper .bx-viewport{
+    -moz-box-shadow: 0 0 0 #ccc;
+    -webkit-box-shadow: 0 0 0 #ccc;
+    box-shadow: 0 0 0 #ccc;
+  }
+  .bx-wrapper .bx-prev {
+    left: 10px;
+    background: url(http://static.tumblr.com/46uneej/9iRna2por/controls.png) no-repeat 0 -32px;
+  }
+  .bx-wrapper .bx-next {
+    right: 10px;
+    background: url(http://static.tumblr.com/46uneej/9iRna2por/controls.png) no-repeat -43px -32px;
+  }
+  .clearfix:before,
+  .clearfix:after {
+    content: " ";
+    display: table;
+   }
+  .clearfix:after {
+    clear: both;
+   }
+   .clearfix {
+    *zoom: 1;
+    }
+    .entry-footer{
+        position:absolute;
+        top: 25%;
+        left: 0;
+        width: 100%;
+        height: auto;
+        background: #fff;
+        display:none;
+        transition: display .25s ease-in-out;
+        -moz-transition: display .25s ease-in-out;
+        -webkit-transition: display .25s ease-in-out;
+    }
+    .timeago{
+        color: #333;
+        font: bold 11px "Montserrat",sans-serif;
+        text-transform: uppercase;
+        padding-left: 10px;
+    }
+    .timeago a{
+        color: #333;
+        text-decoration: none;
+    }
+    .fa{
+        color: #333;
+    }
+    #footer{
+        width: 400px;
+        margin: 0 auto;
+    }
+    #footer a{
+        color: #333;
+        font: bold 13px "Montserrat",sans-serif;
+    }
+    .caption{
+        color: #333;
+        font: 11px "Montserrat",sans-serif;
+        text-transform: uppercase;
+        padding-left: 10px;
+    }

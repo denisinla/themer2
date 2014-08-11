@@ -1,0 +1,319 @@
+<!--
+//////////////////////////////////////////
+-------------------------------------------
+    Quick Theme for TJ
+    Author: Denis Kabistan
+-------------------------------------------
+//////////////////////////////////////////
+-->
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <!-- Variables -->
+  <meta name="text:Google Author" content="Denis Kabistan" />
+  <title>{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}</title>
+  <meta name="viewport" content="width=device-width">
+  <link rel="shortcut icon" href="{Favicon}">
+  <link rel="alternate" type="application/rss+xml" href="{RSS}">
+  <link rel="apple-touch-icon" href="{PortraitURL-128}">
+  <link rel="canonical" href="{Permalink}"/>
+  <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://static.tumblr.com/46uneej/gJ8na2kma/jquery.bxslider.css' rel='stylesheet' type='text/css'>
+  <link href="http://static.tumblr.com/46uneej/xARna434o/marka.min.css" rel="stylesheet" type="text/css">
+  <link href="http://static.tumblr.com/46uneej/Genna53bu/themer2.css" rel="stylesheet" type="text/css">
+  <!-- OGP -->
+  <meta property="og:title" content="{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="{PortraitURL-128}" />
+  <!-- Twitter tags -->
+  <meta name="twitter:image" content="{PortraitURL-128}" />
+  {block:PermalinkPage}
+    {block:Posts}
+      {block:Photo}
+        <meta property="og:image" content="{PhotoURL-HighRes}" />
+      {/block:Photo}
+      {block:Photoset}
+        {block:Photos}
+        <meta property="og:image" content="{PhotoURL-HighRes}" />
+        {/block:Photos}
+      {/block:Photoset}
+    {/block:Posts}
+  {/block:PermalinkPage}
+  <meta property="og:site_name" content="{Title}" />
+  {block:Description}
+    <meta property="og:description" content="{MetaDescription}">
+  {/block:Description}
+  {block:IfGoogleAuthor}
+    <link rel="author" href="{text:Google Author}" />
+  {/block:IfGoogleAuthor}
+  {block:IndexPage}
+    <link rel="canonical" href="{BlogURL}"/>
+    <meta property="og:url" content="{BlogURL}" />
+  {/block:IndexPage}
+  {block:PermalinkPage}
+    <link rel="canonical" href="{Permalink}"/>
+    <meta property="og:url" content="{Permalink}" />
+  {/block:PermalinkPage}
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body class="{block:IndexPage}page-index{/block:IndexPage}{block:PermalinkPage}page-permalink page-{PostID}{/block:PermalinkPage}">
+  <style>{CustomCSS}</style>
+  <div id="container">
+    <header id="header">
+      <h1 class="blog-title">
+        <i id="icon"></i>
+      </h1>
+      {block:Description}
+        <h2 class="blog-description">{Description}</h2>
+      {/block:Description}
+    <nav class="nav" role="navigation">
+      <ul>
+        <li>
+          <a href="/">Home</a>
+        </li>
+        {block:HasPages}
+          {block:Pages}
+          <li>
+            <a href="{URL}">{Label}</a>
+          </li>
+          {/block:Pages}
+        {/block:HasPages}
+        <li>
+          <a href="/archive">Archive</a>
+        </li>
+      </ul>
+    </nav>
+    </header>
+    <div class="full-page-content">
+        <ul class="bxslider">
+            <li><img src="http://static.tumblr.com/46uneej/KPSna2ng4/img1.jpg" alt="Woah" /></li>
+            <li><img src="http://static.tumblr.com/46uneej/Sb0na2ngj/img2.jpg" alt="Woah" /></li>
+            <li><img src="http://static.tumblr.com/46uneej/8GDna2ngo/img3.jpg" alt="Woah" /></li>
+            <li><img src="http://static.tumblr.com/46uneej/EXAna2ngt/img4.jpg" alt="Woah" /></li>
+        </ul>
+    </div>
+    <div id="main" class="clearfix autopagerize_page_element" role="main">
+
+      {block:TagPage}
+        <h2 class="tagged">Posts tagged "{Tag}"</h2>
+      {/block:TagPage}
+    <!-- ALL POSTS -->
+    <div class="isotope">
+      {block:Posts}
+        <article class="post {TagsAsClasses} {PostType}">
+        <!-- POST: text -->
+          {block:Text}
+            <header class="entry-header">
+              {block:Title}
+                <h1 class="entry-title"><a href="{Permalink}">{Title}</a></h1>
+              {/block:Title}
+            </header>
+            <div class="entry-content">
+              {Body}
+            </div>
+          {/block:Text}
+        <!-- POST: image -->
+          {block:Photo}
+            <div class="entry-content">
+              {LinkOpenTag}
+                <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>
+              {LinkCloseTag}
+            </div>
+          {/block:Photo}
+        <!-- POST: album -->
+          {block:Photoset}
+              <div class="entry-content">
+                {Photoset-700}
+              </div>
+          {/block:Photoset}
+        <!-- POST: quote -->
+          {block:Quote}
+            <div class="entry-content {Length}">
+              <blockquote>“{Quote}”</blockquote>
+              {block:Source}
+                <div class="quote-source">
+                  {Source}
+                </div>
+              {/block:Source}
+            </div>
+          {/block:Quote}
+        <!-- POST: url -->
+          {block:Link}
+            <header class="entry-header">
+              <h1 class="entry-title">
+                <a href="{URL}" class="link-url" {Target}>{Name}</a>
+              </h1>
+            </header>
+            <div class="entry-content">
+                {block:Description}
+                  <div class="link-description">{Description}</div>
+                {/block:Description}
+            </div>
+          {/block:Link}
+        <!-- POST: chat -->
+          {block:Chat}
+            <div class="entry-content">
+              {block:Title}
+                <h1 class="entry-title"><a href="{Permalink}">{Title}</a></h1>
+              {/block:Title}
+              <ul class="ul-chat">
+                {block:Lines}
+                <li class="{Alt} user_{UserNumber}">
+                {block:Label}
+                <span class="label">{Label}</span>
+                {/block:Label}
+                {Line}
+                </li>
+                {/block:Lines}
+              </ul>
+            </div>
+          {/block:Chat}
+        <!-- POST: video -->
+          {block:Video}
+            <div class="entry-content video-iframe">
+              {Video-700}
+            </div>
+          {/block:Video}
+        <!-- POST: audio -->
+          {block:Audio}
+            <div class="entry-content">
+              {AudioPlayerBlack}
+            </div>
+          {/block:Audio}
+
+          <!-- POST: answer -->
+          {block:Answer}
+            <div class="entry-content">
+              <div class="question bubble">
+                {Question}
+              </div>
+              <div class="asker-group">
+                <img src="{AskerPortraitURL-24}" width="24" height="24" /> {Asker}
+              </div>
+              <div class="answer cont">{Answer}</div>
+            </div>
+          {/block:Answer}
+
+          <!-- Content Source -->
+          {block:ContentSource}
+            <div class="content-source">
+              <a href="{SourceURL}">
+                {lang:Source}:
+                {block:SourceLogo}
+                  <img src="{BlackLogoURL}" width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />
+                {/block:SourceLogo}
+                {block:NoSourceLogo}
+                    {SourceTitle}
+                {/block:NoSourceLogo}
+              </a>
+            </div>
+          {/block:ContentSource}
+        <!-- FOOTER -->
+          <footer class="entry-footer">
+            {block:RebloggedFrom}
+              <div class="rebloggedfrom">
+                <span class="meta-elements reblog-parent-name">
+                  Reblogged from <a href="{ReblogParentURL}"><img
+src="{ReblogParentPortraitURL-16}" class="favicon"/> {ReblogParentName}</a>
+                </span>
+                <span class="meta-elements reblog-root-name">
+                  Originally posted by <a href="{ReblogRootURL}"><img
+src="{ReblogRootPortraitURL-16}" class="favicon"/> {ReblogRootName}</a>
+                </span>
+              </div>
+            {/block:RebloggedFrom}
+
+            <div class="meta meta-footer">
+              <span class="meta-elements timeago">
+              <i class="fa fa-clock-o"></i>
+                <a href="{Permalink}">{TimeAgo}</a>
+              </span>
+
+
+              {block:Caption}
+                <div class="caption">
+                  {Caption}
+                </div>
+              {/block:Caption}
+
+              {block:NoteCount}
+                <span class="meta-elements notecount">
+                  <a href="{Permalink}">{NoteCount} Notes</a>
+                </span>
+              {/block:NoteCount}
+
+              {block:HasTags}
+                <span class="meta-elements hastags">
+                  {block:Tags}
+                    <a href="{TagURL}">#{Tag}</a>
+                  {/block:Tags}
+                </span>
+              {/block:HasTags}
+
+            </div>
+
+            {block:Date}
+              <div class="tumblr-controls">
+                <ul class="like-and-reblog-buttons">
+                  <li>{ReblogButton}</li>
+                  <li>{LikeButton}</li>
+                </ul>
+              </div>
+            {/block:Date}
+
+            {block:PermalinkPage}
+
+              <ul class="social-buttons">
+              </ul>
+            {/block:PermalinkPage}
+
+            {block:PostNotes}
+              <h3 class="notecount-header">{NoteCount} Notes</h3>
+              <div class="notecontainer">{PostNotes}</div>
+            {/block:PostNotes}
+          </footer>
+
+        </article>
+
+      {/block:Posts}
+    </div><!-- Isotope Wrapper End -->
+    </div>
+
+    <!-- Permalink Pagination -->
+    {block:PermalinkPagination}
+      <div class="pagenation pagenation-permalink">
+        {block:NextPost}
+          <a href="{NextPost}" class="next" rel="next">Newer Post</a>
+        {/block:NextPost}
+        {block:PreviousPost}
+          <a href="{PreviousPost}">Older Post</a>
+        {/block:PreviousPost}
+      </div>
+    {/block:PermalinkPagination}
+
+    <!-- Pagination -->
+    {block:Pagination}
+      <div class="pagination pagination-index">
+        {block:PreviousPage}
+          <a href="{PreviousPage}">Prev</a>
+        {/block:PreviousPage}
+        {block:JumpPagination length="5"}
+          {block:CurrentPage}<span class="current-page">{PageNumber}</span>{/block:CurrentPage}
+          {block:JumpPage}<a class="jump-page" href="{URL}">{PageNumber}</a>{/block:JumpPage}
+        {/block:JumpPagination}
+        {block:NextPage}
+          <a href="{NextPage}" class="next" rel="next">Next</a>
+        {/block:NextPage}
+      </div>
+    {/block:Pagination}
+  </div>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://static.tumblr.com/46uneej/oBlna2km1/bxslider.min.js"></script>
+  <script src="http://static.tumblr.com/46uneej/Z5cna437l/marka.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.0.0/isotope.pkgd.min.js"></script>
+  <script src="http://static.tumblr.com/46uneej/ZMena4yk9/masonry-horizontal.js"></script>
+  <script src="http://static.tumblr.com/46uneej/1dena5383/init.js"></script>
+</body>
+</html>

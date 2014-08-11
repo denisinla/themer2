@@ -1,4 +1,4 @@
-themer2
-=======
+Themer 2
+===
 
-Simple Tumblr theme
+Super simple Tumblr theme for TJ.
